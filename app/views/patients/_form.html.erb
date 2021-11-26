@@ -1,0 +1,12 @@
+<div class="container">
+  <h1 class= "text-center mt-5">Creando Paciente</h1>
+
+  <div class="patient-form">
+    <%= simple_form_for @patient do |f| %>
+      <%= f.input :name, label: "Nombre" %>
+      <%= f.input :last_name, label: "Apellido" %>
+      <%= f.input :phone, label: "Teléfono"  %>
+      <%= f.button :submit, "Crear paciente", class: "btn btn-success"%>
+    <% end %>
+  </div>
+</div>
