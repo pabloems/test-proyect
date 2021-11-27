@@ -1,0 +1,13 @@
+
+
+<div class="container">
+
+  <div class="patient-form">
+    <%= simple_form_for ([@user, @appointment]) do |f| %>
+      <%= f.input :date, label: "Asignar día de consulta" %>
+      <%= f.input :time, label: "Asignar hora de consulta" %>
+      <%= f.association :patient, collection: Patient.order(:name), label: "Paciente" %>
+      <%= f.button :submit, "Crear cita médica", class: "btn btn-success"%>
+    <% end %>
+  </div>
+</div>

@@ -14,4 +14,8 @@ class User < ApplicationRecord
   validates :phone, length: {minimum: 9}
   validates :email, presence: true, format: { with: /\A[\w|.|-]+@[\w|-]+\.\w+\z/ }
 
+  def complete_name
+    self.name + " " + self.last_name
+  end
+
 end

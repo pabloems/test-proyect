@@ -1,0 +1,15 @@
+  <h1 class= "text-center mt-3">Citas Médicas</h1>
+
+  <%= @appointments.each do |f| %>
+<div class="container">
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"> Dr(a) <%= f.user.name + " " + f.user.last_name%></h5>
+      <h6 class="card-subtitle mb-2 text-muted">    <%= f.patient.complete_name.capitalize %></h6>
+      <p class="card-text"> <%= f.date %>
+        <%= f.time.strftime("%H:%M") %>
+      </p>
+    </div>
+  </div>
+</div>
+  <% end %>

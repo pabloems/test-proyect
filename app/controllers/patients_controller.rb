@@ -19,7 +19,7 @@ class PatientsController < ApplicationController
     @patient = Patient.new(patient_params)
     @patient.complete_name.capitalize
     if @patient.save
-      redirect_to patients_path
+      redirect_to root_path
     else
       flash[:alert] = "El paciente no se creó correctamente"
       render :new

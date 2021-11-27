@@ -5,7 +5,11 @@ class Appointment < ApplicationRecord
   belongs_to :patient
 
   # Validaciones
-  validates :date, presence: true
-  validates :date, uniqueness: {scope: :user_id}
+  validates :date, :patient_id, presence: true
+  validates :time, uniqueness: { scope: [:date, :user_id]}
+
+  def cita
+    self.date.strftime("%a, %e %b %Y")
+  end
 
 end
